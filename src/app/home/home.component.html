@@ -1,0 +1,11 @@
+<form>
+  <input type="text" name="juegoId" [(ngModel)]="juegoId" required="true">
+<button (click)="sendSocket()">Enviar
+</button>
+
+</form>
+<br>
+  <ul>
+    <li *ngFor="let item of received">{{item}}</li>
+  </ul>
+
