@@ -1,0 +1,31 @@
+<form [formGroup]="formGame" (submit)="onSubmit()">
+  <label>Kilometros:</label>
+  <input type="number" formControlName="kilometros">
+
+  <label>Nombre Juego:</label>
+  <input type="text" formControlName="juego">
+
+  <ng-container  formArrayName="jugadores">
+    <ng-container  *ngFor="let jugador of jugadores.controls; let index = index">
+      <div [formGroupName]="index">
+        <label>Documento:</label>
+        <input type="number" formControlName="numeroDoc">
+
+        <label>Nombre Juegador:</label>
+        <input type="text" formControlName="nombre">
+
+
+      </div>
+    </ng-container>
+  </ng-container>
+
+  <button type="button" (click)="agregarJugador()">Agregar jugador</button>
+
+  <button type="submit" [disabled]="formGame.invalid">Enviar</button>
+
+
+
+</form>
+
+
+<p>Status: {{ formGame.valid }}</p>

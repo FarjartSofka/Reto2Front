@@ -1,0 +1,22 @@
+.pista {
+  height: 25%;
+  width: 95%;
+  position: absolute;
+  z-index: -1;
+}
+
+.car {
+  position: absolute;
+  width: 100px;
+  z-index: 999999;
+  animation-name: movimientoCarritos;
+  animation-duration: 10s;
+}
+
+@keyframes movimientoCarritos {
+  from {
+    margin-left: 90px;
+  } to {
+    margin-left: 1240px;
+  }
+}
