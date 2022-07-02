@@ -1,35 +1,43 @@
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-
-<form [formGroup]="formGame" (submit)="onSubmit()">
-  <label>Kilometros:</label>
-  <input type="number" formControlName="kilometros">
-
-  <label>Nombre Juego:</label>
-  <input type="text" formControlName="juego">
-
-  <ng-container  formArrayName="jugadores">
-    <ng-container  *ngFor="let jugador of jugadores.controls; let index = index">
-      <div [formGroupName]="index">
-        <label>Documento:</label>
-        <input type="number" formControlName="numeroDoc">
-
-        <label>Nombre Juegador:</label>
-        <input type="text" formControlName="nombre">
-
-
+<div class="container">
+  <form [formGroup]="formGame" (submit)="onSubmit()">
+    <div class= "row">
+      <div class="class col = s6">      
+        <label>Kilometros:</label>
+        <input type="number" formControlName="kilometros">
       </div>
+      <div class="class col = s6">      
+        <label>Nombre Juego:</label>
+        <input type="text" formControlName="juego">
+      </div>
+    </div>
+    <ng-container  formArrayName="jugadores">
+      <ng-container  *ngFor="let jugador of jugadores.controls; let index = index">
+        <div [formGroupName]="index">
+          <label>Documento:</label>
+          <input type="number" formControlName="numeroDoc">
+  
+          <label>Nombre Juegador:</label>
+          <input type="text" formControlName="nombre">
+  
+  
+        </div>
+      </ng-container>
     </ng-container>
-  </ng-container>
-
-  <button type="button" (click)="agregarJugador()">Agregar jugador</button>
-
-  <button type="submit" [disabled]="formGame.invalid">Enviar</button>
-
-
-
-</form>
+    <div class="row">
+      <div class="col s2">
+        <button type="button" (click)="agregarJugador()">Agregar jugador</button>
+      </div>
+      <div class="col s1">
+        <button type="submit" [disabled]="formGame.invalid">Enviar</button> 
+      </div>  
+      
+    </div>
+  
+  
+  
+  </form>
+  
+</div>
 
 
 <p>Status: {{ formGame.valid }}</p>
