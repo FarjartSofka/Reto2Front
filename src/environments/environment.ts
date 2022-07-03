@@ -11,7 +11,9 @@ export const environment = {
     storageBucket: "cargame-f3ea5.appspot.com",
     messagingSenderId: "246079107837",
     appId: "1:246079107837:web:aa0b24fbe7fd2ea12ec494"
-  }
+  },
+  url_api:"http://localhost:8080",
+  webSocketUrl: "ws://localhost:8080"
 };
 
 /*

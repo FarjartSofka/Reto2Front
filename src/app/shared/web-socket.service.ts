@@ -4,6 +4,7 @@ import { AnonymousSubject } from 'rxjs/internal/Subject';
 import { Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { NotificationsSocket } from "../models/notifications-socket";
+import { environment } from "src/environments/environment";
 
 
 
@@ -12,6 +13,7 @@ import { NotificationsSocket } from "../models/notifications-socket";
 })
 export class WebSocketService {
 
+  private URL_WS = environment.webSocketUrl;
   private subject  = new AnonymousSubject<MessageEvent<NotificationsSocket>>;
   public messages = new  Subject<any>;
 
@@ -40,7 +42,7 @@ export class WebSocketService {
   }
 
   private create(juegoId: string): AnonymousSubject<MessageEvent<NotificationsSocket>> {
-      let socket = new WebSocket(`ws://localhost:8080/retrieve/${juegoId}`);
+      let socket = new WebSocket(`${this.URL_WS}/retrieve/${juegoId}`);
       let observable = new Observable((obsr: Observer<MessageEvent<NotificationsSocket>>) => {
           socket.onmessage = obsr.next.bind(obsr);
           socket.onerror = obsr.error.bind(obsr);
