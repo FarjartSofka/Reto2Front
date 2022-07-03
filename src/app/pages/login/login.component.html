@@ -5,18 +5,30 @@
             <b>LOGIN</b>
         </div>
         <div class="card-body">
-            <label>Email</label>
-            <input class="form-control m-2" type="email" placeholder="ingrese su email" [(ngModel)]="usuario.email">
-            <label>Password</label>
-            <input class="form-control m-2" type="password" placeholder="ingrese su password" [(ngModel)]="usuario.password">
-            <button class="btn btn-primary btn-block" (click)="ingresar()">Ingresar</button>
-            <div class="row">
-                <div class="col s4">
-                    <label>¿Aun no Registrado?</label>
+            <div class="formLogin">
+                <div class>
+                    <label>Email</label>
                 </div>
-                <div class ="col s2">
-                    <label>¿Aun no Registrado?</label>
-                    <a href="ingresar()">Registrarse</a>
+                <div class="">
+                    <input class="form-control m-2" type="email" placeholder="ingrese su email" [(ngModel)]="usuario.email">
+                </div>
+            </div>
+            <div>
+                <label>Password</label>
+                <input class="form-control m-2" type="password" placeholder="ingrese su password" [(ngModel)]="usuario.password">
+            </div>
+            <div class="row" center>
+                <div class="col s4">
+                    <button class="btn btn-primary btn-block" (click)="ingresar()">Ingresar</button>
+                </div>
+                <div class="col s4">
+                    <button class="btn btn-primary btn-block" (click)="ingresarEmail()">Ingresar Gmail</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class ="col s7">
+                        <label>¿Aun no Registrado?</label>
+                        <a href="ingresar()">Registrarse</a>
                 </div>
             </div>
         </div>

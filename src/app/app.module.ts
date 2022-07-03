@@ -11,6 +11,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CrearJuegoComponent } from './pages/crear-juego/crear-juego.component';
 import { IniciarJuegoComponent } from './pages/iniciar-juego/iniciar-juego.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from '../environments/environment';
+import { AuthService } from './shared/services/auth.service';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +32,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [ AuthService,
+        { provide: AngularFireModule.initializeApp, useValue: environment.firebaseConfig }],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

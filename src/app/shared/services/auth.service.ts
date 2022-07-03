@@ -8,6 +8,15 @@ import firebase from 'firebase/compat/app';
 export class AuthService {
   
   constructor(private auth: AngularFireAuth) { }
+  
+  async register(email: string, password: string){
+    try{
+      return await  this.auth.createUserWithEmailAndPassword(email, password);
+    } catch (error){
+      console.log("error en Registro: ", error);
+      return null;
+    }
+  }
 
   async login(email: string, password: string){
    try{
@@ -17,6 +26,7 @@ export class AuthService {
      return null;
    }
   }
+
 
   async loginGoogle(email: string, password: string){
     try{
