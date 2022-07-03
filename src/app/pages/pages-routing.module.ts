@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { JuegoFormComponent } from './juego-form/juego-form.component';
+
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  {path:'', component: JuegoFormComponent}
+  {path:'', component: LoginComponent}
 ];
 
 @NgModule({
