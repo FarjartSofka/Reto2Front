@@ -65,7 +65,7 @@ export class IniciarJuegoComponent implements OnInit {
       this.carId2=notificacion.aggregateRootId
     }
 
-    if(this.carId3==='' && notificacion.aggregateRootId!==this.carId2 && notificacion.aggregateRootId!==this.carId3){
+    if(this.carId3==='' && notificacion.aggregateRootId!==this.carId1 && notificacion.aggregateRootId!==this.carId2){
       this.carId3=notificacion.aggregateRootId
     }
   }
