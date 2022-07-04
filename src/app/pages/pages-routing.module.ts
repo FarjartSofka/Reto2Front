@@ -8,7 +8,7 @@ import { LoginComponent } from './login/login.component';
 const routes: Routes = [
   {path:'', component: LoginComponent},
   {path:'crear-juego', component: CrearJuegoComponent },
-  {path:'iniciar-juego/:id', component: IniciarJuegoComponent}
+  {path:'iniciar-juego/:id/:kilometros', component: IniciarJuegoComponent}
 ];
 
 @NgModule({

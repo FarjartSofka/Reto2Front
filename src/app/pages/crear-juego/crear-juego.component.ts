@@ -66,7 +66,7 @@ export class CrearJuegoComponent implements OnInit {
 
 
   crearJuego(nuevoJuego : any){
-    this.juegoSvc.crearJuego(nuevoJuego).subscribe(response=>this.router.navigate([`iniciar-juego/${response}`]) );
+    this.juegoSvc.crearJuego(nuevoJuego).subscribe(response=>this.router.navigate([`iniciar-juego/${response}/${nuevoJuego['kilometros']}`]) );
   }
 
 

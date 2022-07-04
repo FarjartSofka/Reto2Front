@@ -5,9 +5,16 @@
       <button mat-raised-button color="primary" (click)="iniciarJuego()">INICIAR JUEGO</button>
     </div>
   </div>
-        <app-pista ></app-pista>
-        <app-pista ></app-pista>
-        <app-pista ></app-pista>
+  <div class="pista">
+    <input type="range" min="0" max="{{distanciaMax}}" value="{{distancia1}}" class="slider" disabled>
+  </div>
+  <div class="pista">
+    <input type="range" min="0" max="{{distanciaMax}}" value="{{distancia2}}" class="slider" disabled>
+  </div>
+
+  <div class="pista">
+    <input type="range" min="0" max="{{distanciaMax}}" value="{{distancia1}}" class="slider" disabled>
+  </div>
 
   <br>
 
