@@ -11,7 +11,7 @@ import { JuegoService } from 'src/app/services/juego.service';
 export class CrearJuegoComponent implements OnInit {
   jugadoresNoValidos = true;
   formGame = this.fb.group({
-    kilometros: ['', [Validators.required]],
+    kilometros: ['', [Validators.required, Validators.max(8) , Validators.min(1)]],
     juego:['', [Validators.required]],
     jugadores: this.fb.array([])
   });

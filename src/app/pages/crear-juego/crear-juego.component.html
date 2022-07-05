@@ -9,7 +9,7 @@
           <form [formGroup]="formGame" class="col s12">
             <mat-form-field appearance="legacy" class="col s6">
               <mat-label>Kilometros de Carrera</mat-label>
-              <input matInput type="number" placeholder="kilometros" formControlName="kilometros" >
+              <input matInput type="number" min="1" max="8" placeholder="kilometros" formControlName="kilometros" >
             </mat-form-field>
 
             <mat-form-field appearance="legacy" class="col s6">
