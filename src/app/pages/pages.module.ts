@@ -12,6 +12,8 @@ import { AuthService } from '../shared/services/auth.service';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { RegistrarComponent } from './registrar/registrar.component';
+import { MejoresPuntajesComponent } from './mejores-puntajes/mejores-puntajes.component';
+
 
 
 @NgModule({
@@ -19,7 +21,8 @@ import { RegistrarComponent } from './registrar/registrar.component';
     LoginComponent,
     CrearJuegoComponent,
     IniciarJuegoComponent,
-    RegistrarComponent
+    RegistrarComponent,
+    MejoresPuntajesComponent
   ],
   imports: [
     SharedModule,

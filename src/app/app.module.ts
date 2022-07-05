@@ -10,7 +10,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
-import { AuthService } from './shared/services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 
 

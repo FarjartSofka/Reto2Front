@@ -42,7 +42,7 @@ export class IniciarJuegoComponent implements OnInit {
       console.log('Response from websocket: ' + msg);
       let notification : NotificationsSocket = JSON.parse(msg)
       if(this.carId1 ==='' || this.carId2==='' || this.carId3===''){
-        this.asignarIdCarros(notification)
+        this.asignarIdCarros(notification.aggregateRootId)
       }
       this.moverCarro(notification)
 
@@ -56,17 +56,17 @@ export class IniciarJuegoComponent implements OnInit {
       this.webSocketService.wscConnect(this.idJuego);
   }
 
-  asignarIdCarros(notificacion : NotificationsSocket ){
+  asignarIdCarros(aggregateRootId : string ){
     if(this.carId1===''){
-      this.carId1 = notificacion.aggregateRootId
+      this.carId1 = aggregateRootId
     }
 
-    if(this.carId2==='' && notificacion.aggregateRootId!==this.carId1){
-      this.carId2=notificacion.aggregateRootId
+    if(this.carId2==='' && aggregateRootId!==this.carId1){
+      this.carId2= aggregateRootId
     }
 
-    if(this.carId3==='' && notificacion.aggregateRootId!==this.carId1 && notificacion.aggregateRootId!==this.carId2){
-      this.carId3=notificacion.aggregateRootId
+    if(this.carId3==='' && aggregateRootId!==this.carId1 && aggregateRootId!==this.carId2){
+      this.carId3= aggregateRootId
     }
   }
 
