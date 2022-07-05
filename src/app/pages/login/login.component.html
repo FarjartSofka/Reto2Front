@@ -1,34 +1,47 @@
 <div class="container">
 
-    <div class="card text-center">
-        <div class="card-header">
+    <div class="card">
+
+        <div class="hidden">
+            <div>
+                Correo no Registrado
+            </div>
+        </div>
+
+        <div class="">
             <b>LOGIN</b>
         </div>
-        <div class="card-body">
+        <div class="">
             <div class="formLogin">
-                <div class>
+                <div class="label">
                     <label>Email</label>
                 </div>
-                <div class="">
-                    <input class="form-control m-2" type="email" placeholder="ingrese su email" [(ngModel)]="usuario.email">
+                <div class="input">
+                    <input class="hold form-control m-2" type="email" placeholder="ingrese su email" [(ngModel)]="usuario.email">
                 </div>
             </div>
             <div>
-                <label>Password</label>
-                <input class="form-control m-2" type="password" placeholder="ingrese su password" [(ngModel)]="usuario.password">
-            </div>
-            <div class="row" center>
-                <div class="col s4">
-                    <button class="btn btn-primary btn-block" (click)="ingresar()">Ingresar</button>
+                <div class="label">
+                    <label>Password</label>
                 </div>
-                <div class="col s4">
-                    <button class="btn btn-primary btn-block" (click)="ingresarEmail()">Ingresar Gmail</button>
+                <div class="input">
+                    <input class="hold form-control m-2" type="password" placeholder="ingrese su password" [(ngModel)]="usuario.password">
                 </div>
             </div>
             <div class="row">
-                <div class ="col s7">
+                <div class="buttons">
+                    <div class="btn1 col s6">
+                        <button class="button1 btn" (click)="ingresar()">Ingresar</button>
+                    </div>
+                    <div class="col s6">
+                        <button class="button2 btn" (click)="ingresarEmail()">Gmail</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class ="section">
                         <label>¿Aun no Registrado?</label>
-                        <a [routerLink]="" (click)="ingresar()">Registrarse</a>
+                        <a [routerLink]="" (click)="registrar()">Registrarse</a>
                 </div>
             </div>
         </div>

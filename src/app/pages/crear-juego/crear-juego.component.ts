@@ -42,7 +42,6 @@ export class CrearJuegoComponent implements OnInit {
   onSubmit(){
     let juegoCrear = this.crearObjetoNuevoJuego();
     this.crearJuego(juegoCrear);
-
   }
 
 

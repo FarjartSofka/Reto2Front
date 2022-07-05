@@ -11,13 +11,15 @@ import { CrearJuegoComponent } from './crear-juego/crear-juego.component';
 import { AuthService } from '../shared/services/auth.service';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
+import { RegistrarComponent } from './registrar/registrar.component';
 
 
 @NgModule({
   declarations: [
     LoginComponent,
     CrearJuegoComponent,
-    IniciarJuegoComponent
+    IniciarJuegoComponent,
+    RegistrarComponent
   ],
   imports: [
     SharedModule,

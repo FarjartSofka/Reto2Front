@@ -1,12 +1,41 @@
 .container{
     display: flex;
     justify-content: center;
+    text-align: center;
+    height: 85vh ;
+}
+
+.label{
+    text-align: left;
+}
+.buttons{
+    margin-top: 2vw;
+
+}
+
+.button1{
+    margin-left: 3vw
+}
+
+.button2{
+    margin-left: 2vw;
+}
+
+.section{
     align-items: center;
-    width: 100vw;
-    height: 100vh;
+}
+
+.hold{
+    align-content: center;
+}
+
+.input{
+    text-align: center !important;
 }
 .class-header{
     display: flex;
+    align-content: center;
+    text-align: -webkit-center;
 }
 .btn{
     display: flex;

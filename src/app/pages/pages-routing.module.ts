@@ -4,10 +4,12 @@ import { CrearJuegoComponent } from './crear-juego/crear-juego.component';
 import { IniciarJuegoComponent } from './iniciar-juego/iniciar-juego.component';
 
 import { LoginComponent } from './login/login.component';
+import { RegistrarComponent } from './registrar/registrar.component';
 
 const routes: Routes = [
   {path:'', component: LoginComponent},
   {path:'crear-juego', component: CrearJuegoComponent },
+  {path:'registro', component: RegistrarComponent},
   {path:'iniciar-juego/:id/:kilometros', component: IniciarJuegoComponent}
 ];
 

@@ -1,0 +1,39 @@
+<div class="container">
+
+    <div class="card text-center">
+        <div class="card-header">
+            <b>Registrase</b>
+        </div>
+        <div class="card-body">
+            <div class="formLogin">
+                <div class>
+                    <label>Email</label>
+                </div>
+                <div class="">
+                    <input class="input form-control m-2" type="email" placeholder="ingrese su email" [(ngModel)]="usuario.email">
+                </div>
+            </div>
+            <div>
+                <label>Password</label>
+                <input class="input form-control m-2" type="password" placeholder="ingrese su password" [(ngModel)]="usuario.password">
+            </div>
+            <div class="row" center>
+                <div class="col s4">
+                    <button class="btn btn-primary btn-block" (click)="ingresar()">Ingresar</button>
+                </div>
+                <div class="col s4">
+                    <button class="btn btn-primary btn-block" (click)="ingresarEmail()">Ingresar Gmail</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class ="col s7">
+                        <label>Ya estas Registrado?</label>
+                        <a [routerLink]="" (click)="registrar()">Registrarse</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+
+        </div>
+    </div>
+</div>
