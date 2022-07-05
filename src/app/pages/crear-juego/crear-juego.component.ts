@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { JuegoService } from 'src/app/services/juego.service';
+import { ValidatorsCustom } from 'src/app/shared/validator/validators-custom';
 
 @Component({
   selector: 'app-crear-juego',
@@ -11,8 +12,8 @@ import { JuegoService } from 'src/app/services/juego.service';
 export class CrearJuegoComponent implements OnInit {
   jugadoresNoValidos = true;
   formGame = this.fb.group({
-    kilometros: ['', [Validators.required, Validators.max(8) , Validators.min(1)]],
-    juego:['', [Validators.required]],
+    kilometros: ['', [Validators.required, ValidatorsCustom.range(1,8), ValidatorsCustom.cannotContainSpace]],
+    juego:['', [Validators.required, ValidatorsCustom.cannotContainSpace]],
     jugadores: this.fb.array([])
   });
 
@@ -25,9 +26,7 @@ export class CrearJuegoComponent implements OnInit {
     this.validarCantidadJugadores();
   }
 
-  validarCantidadJugadores(){
-    this.jugadores.valueChanges.subscribe(value=> this.jugadoresNoValidos = value.length!==3)
-  }
+
 
   agregarJugador(){
 
@@ -42,6 +41,10 @@ export class CrearJuegoComponent implements OnInit {
   onSubmit(){
     let juegoCrear = this.crearObjetoNuevoJuego();
     this.crearJuego(juegoCrear);
+  }
+
+  private validarCantidadJugadores(){
+    this.jugadores.valueChanges.subscribe(value=> this.jugadoresNoValidos = value.length!==3)
   }
 
 
@@ -64,7 +67,7 @@ export class CrearJuegoComponent implements OnInit {
   }
 
 
-  crearJuego(nuevoJuego : any){
+  private crearJuego(nuevoJuego : any){
     this.juegoSvc.crearJuego(nuevoJuego).subscribe(response=>this.router.navigate([`iniciar-juego/${response}/${nuevoJuego['kilometros']}`]) );
   }
 

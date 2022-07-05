@@ -3,6 +3,8 @@ import {MatPaginator, MatPaginatorIntl} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table'
 import { Score } from 'src/app/models/score';
 import { JuegoService } from 'src/app/services/juego.service';
+import {Location} from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mejores-puntajes',
@@ -16,7 +18,9 @@ export class MejoresPuntajesComponent implements OnInit,  AfterViewInit {
   @ViewChild(MatPaginator) paginator: MatPaginator = new MatPaginator(new MatPaginatorIntl(), ChangeDetectorRef.prototype);
 
   constructor(
-    private juegoSVC : JuegoService
+    private juegoSVC : JuegoService,
+    private router : Router
+
   ) { }
 
   ngOnInit(): void {
@@ -27,12 +31,16 @@ export class MejoresPuntajesComponent implements OnInit,  AfterViewInit {
     this.dataSource.paginator = this.paginator;
   }
 
-obtenerPuntajes(){
- this.juegoSVC.obtenerPuntajes().subscribe(score =>{
-    this.dataSource.data = score;
+  obtenerPuntajes(){
+    this.juegoSVC.obtenerPuntajes().subscribe(score =>{
+      this.dataSource.data = score;
 
-   });
+    });
 
+  }
+
+  back(){
+    this.router.navigate([`/crear-juego`])
   }
 
 }
