@@ -1,6 +1,6 @@
 <div class="row contenedor-boton">
   <div class="col s12"  style="text-align: center;">
-    <button mat-raised-button color="primary" (click)="iniciarJuego()">INICIAR JUEGO</button>
+    <button mat-raised-button color="primary" [disabled]="disableButtonPlay" (click)="iniciarJuego()">INICIAR JUEGO</button>
   </div>
 </div>
 <div class="contenedor-pistas">
@@ -10,11 +10,12 @@
   <div class="pista">
     <input type="range" min="0" max="{{distanciaMax}}" value="{{distancia2}}" class="slider" disabled>
   </div>
-
   <div class="pista">
     <input type="range" min="0" max="{{distanciaMax}}" value="{{distancia3}}" class="slider" disabled>
   </div>
 </div>
+
+{{ distancia1 }} {{ distancia2 }} {{ distancia3 }}
 
 
 

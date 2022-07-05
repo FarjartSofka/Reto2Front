@@ -10,14 +10,28 @@
             <mat-form-field appearance="legacy" class="col s6">
               <mat-label>Kilometros de Carrera</mat-label>
               <input matInput type="number" min="1" max="8" placeholder="kilometros" formControlName="kilometros" >
+              <div *ngIf="kilometros.invalid && (kilometros.dirty || kilometros.touched)">
+                  <mat-error *ngIf="kilometros.errors?.['required']">
+                    Kilometros es obligatorio.
+                  </mat-error>
+                  <mat-error *ngIf="kilometros.errors?.['range']">
+                    Los kilometros no pueden ser menor a uno o mayor a 8
+                  </mat-error>
+              </div>
             </mat-form-field>
 
             <mat-form-field appearance="legacy" class="col s6">
               <mat-label>Juego</mat-label>
               <input matInput placeholder="juego" formControlName="juego" >
+              <div *ngIf="juego.invalid && (juego.dirty || juego.touched)">
+                <mat-error *ngIf="juego.errors?.['required']">
+                  Nombre de juego es obligatorio.
+                </mat-error>
+                <mat-error *ngIf="juego.errors?.['cannotContainSpace']">
+                  El campo no puede llevar espacios
+                </mat-error>
+              </div>
             </mat-form-field>
-
-
             <div class="col s12">
               <ng-container formArrayName="jugadores">
                 <mat-card-title>Agregar Jugador:</mat-card-title>
@@ -41,6 +55,7 @@
             </div>
           </form>
         </div>
+        {{kilometros.errors?.['range']}}
       </mat-card-content>
       <mat-card-actions>
         <button   (click)="onSubmit()"
